@@ -1,5 +1,8 @@
 # Algo Bissextile
 
+import random as r
+import time as t
+
 def algoBissextile():
     # Demande a l'utilisateur de rentrer une année
     annee = (int(input("Rentrez une année pour savoir si elle est Bissextile : ")))
@@ -57,6 +60,30 @@ def cardLuhn():
     else :
         print("Votre numéro de carte est incorrecte")
 
+def gameNumber(max):
+    # Affectation des variables
+    cpessai, game, chiffre, seconde = 0 , True, r.randint(0,max), t.time()
 
-
-
+    # Information plus boucle de jeu
+    print("Le chiffre est compri entre 0 et",max,"\n")
+    while game == True:
+        # Augmentation du nombre de tentative
+        cpessai += 1
+        # Demande du chiffre a test
+        numberOfUser = int(input("Entrez le nombre a tester : "))
+        # Si le chiffre est hors des limites
+        if numberOfUser > max or numberOfUser < 0 :
+            print("Fait un effort tu va trop haut !\nAllez je retire un essai au compteur mais ne te trompe plus !")
+            cpessai -= 1
+        # Vérifie si les résultats est le bon
+        elif numberOfUser == chiffre :
+            seconde = t.time() - seconde
+            seconde = float(round(seconde, 2))
+            print("Bravo vous avez trouver ! Le nombre était",chiffre,"vous avez réussi en",cpessai,"essai et en",seconde,"secondes !")
+            game = False
+        # Si le résultat est supérieur
+        elif numberOfUser > chiffre :
+            print("Plus petit !")
+        # Idem mais inférieur
+        elif numberOfUser < chiffre :
+            print("Plus grand !")
