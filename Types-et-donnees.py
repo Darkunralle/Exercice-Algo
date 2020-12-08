@@ -1,5 +1,7 @@
 import random as r
 import time as t
+from turtle import *
+
 
 def algoBissextile():
     # Demande a l'utilisateur de rentrer une année
@@ -85,3 +87,38 @@ def gameNumber(max):
         # Idem mais inférieur
         elif numberOfUser < chiffre :
             print("Plus grand !")
+
+def tableMult(taille):
+    # Création des variables
+    tab, temp = [], []
+
+    # Deux boucle pour simuler une table
+    for i in range(1,taille+1):
+        for j in range(1,taille+1):
+            # Ajoute le résultat de la multiplication a la liste temp
+            temp.append(i*j)
+        # Ajoute la liste temp a tab
+        tab.append(temp)
+        # RaZ de temp
+        temp = []
+    # Pour un meilleur affichage
+    for row in tab:
+        print(row)
+    
+def turtle(couleur):
+    color(couleur)
+    while True :
+        rand = r.randint(1,3)
+        if rand == 1:
+            forward(10)
+        if rand == 2 :
+            right(90)
+            forward(10)
+        if rand == 3 :
+            left(90)
+            forward(10)
+
+
+turtle("red")
+turtle("blue")
+
