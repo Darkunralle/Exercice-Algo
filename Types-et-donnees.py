@@ -1,7 +1,7 @@
 import random as r
 import time as t
-from turtle import *
-
+import turtle
+m = turtle.Turtle()
 
 def algoBissextile():
     # Demande a l'utilisateur de rentrer une année
@@ -105,20 +105,20 @@ def tableMult(taille):
     for row in tab:
         print(row)
     
-def turtle(couleur):
-    color(couleur)
+def turtleg(couleur):
+    m.color(couleur)
     while True :
         rand = r.randint(1,3)
         if rand == 1:
-            forward(10)
+            m.forward(10)
         if rand == 2 :
-            right(90)
-            forward(10)
+            m.right(90)
+            m.forward(10)
         if rand == 3 :
-            left(90)
-            forward(10)
+            m.left(90)
+            m.forward(10)
 
 
-turtle("red")
-turtle("blue")
+turtleg("red")
+turtleg("blue")
 
